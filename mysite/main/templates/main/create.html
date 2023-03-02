@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+
+{% block create %}
+<form method="post" action="/create/">
+	<h3>Add your note here</h3>
+	{% csrf_token %}
+	{{form.as_p}}
+	<button type="submit">Submit Note<button>
+	<a href="/home/">Back</a>
+</form>	
+
+{% endblock create %}

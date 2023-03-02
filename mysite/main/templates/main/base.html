@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SimpleNoteZ</title>
+<style>
+
+.notesblock {
+	
+}
+
+.indnote {
+	background: #FFE4C4;
+	padding: 20px;
+	margin-bottom: 5px;
+	width: 150px;
+	height: 50px;
+	display: inline-block;
+
+}
+#headfoot {
+	background: #F4A460;
+	font-family:cursive;
+	color: #FFEFD5;
+	padding: 1px;
+	margin:0px;
+	font-size: 15px;
+	font-size: 10;
+}
+
+#beginboxes {
+	background: #BC8F8F;
+}
+
+#notebox {
+	background: #F4A460;
+	padding:10px;
+	width:fit-content;
+}
+
+body {
+	background-color: #FFF8DC;
+	width:100%; height:100%;
+}
+</style>
+</head>
+<body>
+
+	<div class="header" id="headfoot">
+		<h1>SimpleNoteZ</h1>
+	</div>
+<hr class="solid">
+
+	<div>
+		{% block singlenote %}
+		{% endblock singlenote %}
+	</div>
+
+	<div class="home">
+		{% block home %}
+		{% endblock home %}
+	</div>
+
+	<div>
+		{% block create %}
+		{% endblock create %}
+	</div>
+
+	<div>
+		{% block mynotez %}
+		{% endblock mynotez %}
+	</div>
+
+
+<hr class="solid">
+	<div class="footer" id="headfoot">
+		<h2>SimpleNoteZ</h2>
+	</div>
+</body>
+</html>

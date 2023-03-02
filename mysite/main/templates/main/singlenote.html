@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+
+{% block singlenote %}
+<h3>Your note:  </h3>
+
+<p id="notebox">{{note.text}}</p>
+
+<a href="/home/">Back</a>
+<a href="/mynotez/">View All Your Notes</a>
+{% endblock singlenote %}
