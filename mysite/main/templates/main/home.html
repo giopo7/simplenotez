@@ -2,12 +2,21 @@
 
 {% block home %}
 
-<div class="addnote" id="beginboxes">	
-	<h3> Add a new note </h3>
-	<a href="/create/">Add</a>
+<div class="homeblock">
+	
+	<ul>
+		<li class="home">
+			<h5> Add A New Note</h5>
+			<a href="/create/">  
+      		<input type="submit" value="Add"/></a>
+		</li>	
 
-<div class="viewnotes" id="beginboxes">	
-	<h3> View your notes </h3>
-	<a href="/mynotez/">View</a>
+		<li class="home">
+			<h5> View Your Notes</h5>
+			<a href="/mynotez/">  
+      		<input type="submit" value="View"/></a>
+	</ul>
 
+	<p>First time here? <a href="/register/">Register</a></p>
+</div>					
 {% endblock home %}

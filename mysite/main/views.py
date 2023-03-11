@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Notes
 from .forms import MakeNewNote
-
+from django.http import HttpResponse
 # Create your views here.
 
 
@@ -24,6 +24,15 @@ def create(response):
 def mynotez(response):
 	noteslist=Notes.objects
 	return render(response, 'main/mynotez.html', {"noteslist":noteslist})
+
+def delete_note(request, id):
+    query = Notes.objects.get(id=id)
+    query.delete()
+    return mynotez(request)
+
+
+    # return HttpResponse("Deleted!")
+
 
 def singlenote(response, id):
  	n = Notes.objects.get(id=id)

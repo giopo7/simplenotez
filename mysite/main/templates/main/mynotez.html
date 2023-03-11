@@ -3,15 +3,25 @@
 {% block mynotez %}
 
 <div class="notesblock">
-	<h3> Here are all you notes:</h3>
-	<ul>
-		{% for item in noteslist.all %}
-		
-				<li class="indnote">{{item.text}}</li>
-		
-		{% endfor %} 
-	</ul>
-	<a href="/home/">Back</a>
+	{% if noteslist.all|length > 0 %}
+		<h3> Here are all you notes:</h3>
+		<ul>
+			{% for item in noteslist.all %}
+			
+					<li class="indnote">
+						{{item.text}}
+						<td><a href="/delete/{{ item.id }}">Delete</a></td>
+					</li>
+			
+			{% endfor %} 
+		</ul>
+	{% else %}
+		<p>You don't have any notes</p>
+		<td><a href="/create/">Create One!</a></td>
+
+	{% endif %}
+	<a href="/home/">  
+    <input type="submit" value="Back"/></a>
 </div>
 
 {% endblock mynotez %}
