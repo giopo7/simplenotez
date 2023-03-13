@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %}
 
-{% block create %}
+{% block content %}
 <form method="post" action="/create/">
 	<h3>Add your note here</h3>
 	{% csrf_token %}
@@ -10,4 +10,4 @@
 </form>	
 <a href="/home/">Back</a>
 
-{% endblock create %}
+{% endblock content %}

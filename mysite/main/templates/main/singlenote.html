@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %}
 
-{% block singlenote %}
+{% block content %}
 <h3>Your note:  </h3>
 
 <p id="notebox">{{note.text}}</p>
@@ -9,4 +9,4 @@
       		<input type="submit" value="Back"/></a>
 <a href="/mynotez/">  
       		<input type="submit" value="View your notes"/></a>
-{% endblock singlenote %}
+{% endblock content %}

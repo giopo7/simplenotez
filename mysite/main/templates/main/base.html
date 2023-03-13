@@ -49,11 +49,15 @@
 
 
 #headfoot {
-	height: 50px;
+	height: 20px;
 	margin-left: 0px;
 	color: #483d8b;
 }
 
+#headfoot hr {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
 
 #notebox {
 	background: #483d8b80;
@@ -80,11 +84,13 @@
 
 .homeblock p {
 	font-family: "Lucida Console", "Courier New", monospace;
-	margin-top: 70px;
+	margin-top: 30px;
 }
 
 .bodycontent {
-	margin-top: 100px;
+	margin-left: 50px;
+	margin-top: 80px;
+	margin-bottom: 20px;
 }
 
 </style>
@@ -95,7 +101,11 @@
 		<a href="/home/">Home</a>
 		<a href="/create/">Create</a>
 		<a href="/mynotez/">My NoteZ</a>
-		<a href="/register/">Sign Up</a>
+		{% if user.is_authenticated %}
+		<a href="/logout/">Log Out</a>
+		{% else %}
+		<a href="/login/">Log In</a>
+		{% endif %}
 	</div>
 
 	<div id="content", name="content",  class="main">
@@ -105,27 +115,19 @@
 			</div>
 
 			<div class="bodycontent">
-				<div>
-					{% block register %}
-					{% endblock register %}
-				</div>
-				<div>
-					{% block singlenote %}
-					{% endblock singlenote %}
-				</div>
-				<div>
-					{% block home %}
-					{% endblock home %}
-				</div>
-				<div>
-					{% block create %}
-					{% endblock create %}
-				</div>
-				<div>
-					{% block mynotez %}
-					{% endblock mynotez %}
-				</div>
-				
+				{% block home %}
+				{% endblock home %}
+
+				{% if user.is_authenticated %}
+					{% block content %}
+					{% endblock content %}
+				{% else %}
+					<p>Login <a href="/login">Here</a></p>
+					<p>First time here? <a href="/register/">Register</a></p>
+				{% endif %}
+
+				{% block login %}
+				{% endblock login %}
 			</div>
 
 			<div class="footer" id="headfoot">
