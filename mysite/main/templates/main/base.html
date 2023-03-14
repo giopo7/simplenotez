@@ -37,8 +37,8 @@
 	background: #483d8b80;
 	padding: 10px 50px;
 	margin: 5px;
-	width: 150px;
-	height: 70px;
+	width: 300px;
+	height: fit-content;
 	display: inline-block;
 }
 
@@ -47,6 +47,11 @@
 	margin-left: 50px;
 }
 
+.indnote p {
+	width: 300px;
+	height: fit-content;
+	display: inline-block;
+}
 
 #headfoot {
 	height: 20px;
@@ -115,6 +120,9 @@
 			</div>
 
 			<div class="bodycontent">
+				{% if user.is_authenticated %}
+					<p>Welcome, {{ request.user }}</p>
+				{% endif %}
 				{% block home %}
 				{% endblock home %}
 

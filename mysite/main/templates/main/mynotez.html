@@ -2,26 +2,28 @@
 
 {% block content %}
 
-<div class="notesblock">
-	{% if noteslist.all|length > 0 %}
-		<h3> Here are all you notes:</h3>
-		<ul>
-			{% for item in noteslist.all %}
-			
-					<li class="indnote">
-						{{item.text}}
-						<td><a href="/delete/{{ item.id }}">Delete</a></td>
-					</li>
-			
-			{% endfor %} 
-		</ul>
-	{% else %}
-		<p>You don't have any notes</p>
-		<td><a href="/create/">Create One!</a></td>
 
-	{% endif %}
-	<a href="/home/">  
-    <input type="submit" value="Back"/></a>
-</div>
+
+	<div class="notesblock">
+		{% if noteslist.all|length > 0 %}
+			<h3> Here are all you notes:</h3>
+			<ul>
+				{% for item in noteslist.all %}
+				
+						<li class="indnote">
+							<p>{{item.text}}</p>
+							<td><a href="/delete/{{ item.id }}">Delete</a></td>
+						</li>
+				
+				{% endfor %} 
+			</ul>
+		{% else %}
+			<p>You don't have any notes</p>
+			<td><a href="/create/">Create One!</a></td>
+
+		{% endif %}
+		<a href="/home/">  
+	    <input type="submit" value="Back"/></a>
+	</div>
 
 {% endblock content %}

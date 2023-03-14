@@ -26,8 +26,11 @@ def create(request):
 
 def mynotez(request):
 	# noteslist=Notes.objects
-	noteslist = Notes.objects.filter(user=request.user)
-	return render(request, 'main/mynotez.html', {"noteslist":noteslist})
+	if request.user.is_authenticated:
+		noteslist = Notes.objects.filter(user=request.user)
+		return render(request, 'main/mynotez.html', {"noteslist":noteslist})
+	else:
+		return render(request, 'main/create.html', {} )
 
 def delete_note(request, id):
     query = Notes.objects.get(id=id)
