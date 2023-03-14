@@ -124,10 +124,9 @@
 				{% else %}
 					<p>Login <a href="/login">Here</a></p>
 					<p>First time here? <a href="/register/">Register</a></p>
+					{% block login %}
+					{% endblock login %}
 				{% endif %}
-
-				{% block login %}
-				{% endblock login %}
 			</div>
 
 			<div class="footer" id="headfoot">
