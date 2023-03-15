@@ -19,7 +19,7 @@ def create(request):
 			note.text = n
 			note.user = request.user
 			note.save()
-		return render(request, 'main/singlenote.html', {"note":note})
+		return render(request, 'main/singlenote.html', {"text":note.text})
 	else:
 		form=MakeNewNote()
 	return render(request, 'main/create.html', {"form":form})

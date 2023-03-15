@@ -1,10 +1,10 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-<form method="post" action="/create/">
+<form method="post" id="id-input-box" action="/create/">
 	<h3>Add your note here</h3>
 	{% csrf_token %}
-	{{form.as_p}}
+	{{form.as_p|linebreaksbr}}
 	<button type="submit">Submit Note<button>
 	
 </form>	

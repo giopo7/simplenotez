@@ -11,7 +11,8 @@
 				{% for item in noteslist.all %}
 				
 						<li class="indnote">
-							<p>{{item.text}}</p>
+							<p>{{item.text|truncatechars:40}}</p>
+							<td><a href="/{{ item.id }}">View Note</a></td>
 							<td><a href="/delete/{{ item.id }}">Delete</a></td>
 						</li>
 				

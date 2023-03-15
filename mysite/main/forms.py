@@ -1,4 +1,4 @@
 from django import forms 
 
 class MakeNewNote(forms.Form):
-	text = forms.CharField(label="text", max_length=500)
+	text = forms.CharField(label="", widget=forms.Textarea, max_length = 10000)
