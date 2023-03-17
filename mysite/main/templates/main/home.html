@@ -2,19 +2,12 @@
 
 {% block home %}
 
-<div class="homeblock">
-	
-	<ul>
-		<li class="home">
-			<h5> Add A New Note</h5>
-			<a href="/create/">  
-      		<input type="submit" value="Add"/></a>
-		</li>	
-
-		<li class="home">
-			<h5> View Your Notes</h5>
-			<a href="/mynotez/">  
-      		<input type="submit" value="View"/></a>
-	</ul>
+<div>
+	<div class="align-button">
+		<button class="main-button" onclick="location.href = '/create'">Add &#9998;</button>	
+	</div>
+	<div class="align-button">
+		<button class="main-button" onclick="location.href = '/mynotez'">Notes &#10064;</button>
+	</div>
 </div>					
 {% endblock home %}

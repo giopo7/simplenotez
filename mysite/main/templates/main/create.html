@@ -1,13 +1,20 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-<form method="post" id="id-input-box" action="/create/">
+<div>
+<form method="post" action="/create/">
 	<h3>Add your note here</h3>
 	{% csrf_token %}
 	{{form.as_p}}
-	<button type="submit">Submit Note<button>
+	<div class="align-button">
+		<button class="main-button" type="submit">Submit Note</button>
+	</div>
 	
 </form>	
-<a href="/home/">Back</a>
+
+<div class="align-button">
+	<button class="main-button" onclick="location.href = '/home'">Back</button>
+</div>
+</div>
 
 {% endblock content %}

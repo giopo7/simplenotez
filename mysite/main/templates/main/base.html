@@ -8,6 +8,49 @@
 
 /*main color: #483d8b*/
 
+/*input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.div-form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}*/
+
+.main {
+	margin-left: 130px;
+	background-color: white;
+	padding: 0px 0px 0px 0px;
+}
+
+.body {
+	margin-left: 50px;
+	margin-top: 80px;
+	margin-bottom: 20px;
+}
+
 .sidenav {
 	height: 100%;
 	width: 130px;
@@ -44,20 +87,18 @@
 	top: 0px;
 }
 
-.indnote-button {
+.create-button {
 	background-color: #483d8b;
 	list-style-type: none;
 	display: inline-block;
-	width:80px;
 	vertical-align:top;
 	height: 80px;
-	top: 0px;
+	width: 80px;
 	border: 11px;
 	color: #FFEBCD;
-	padding-bottom: 20px;
 	text-align: center;
-	font-size: 48px;
-	margin-top: 40px;
+	font-size: 60px;
+	margin-top: 45px;
 	margin-left: 30px;
 	opacity: 0.5;
 	transition: 0.3s;
@@ -66,12 +107,36 @@
 	border-radius: 50%;
 }
 
+.main-button {
+	background-color: #483d8b;
+	list-style-type: none;
+/*	display: inline-block;*/
+	margin-right: 10px;
+	margin-bottom: 10px;
+	width:100px;
+	height: 50px;
+	vertical-align:top;
+	border: none;
+	color: #FFEBCD;
+	text-align: center;
+	font-size: 20px;
+	opacity: 0.5;
+	transition: 0.3s;
+	text-decoration: none;
+	cursor: pointer;
+	border-radius: 10%;
+}
+
+.align-button {
+	display: inline-block;
+}
+
 .notesblock button:hover {opacity: 1}
 
-.indnote a {
+/*.indnote a {
 	color: #483d8b;
 	margin-left: 50px;
-}
+}*/
 
 .indnote p {
 	width: 300px;
@@ -81,63 +146,15 @@
 	font-style: oblique;
 }
 
-#addnote {
-	background-color: #4CAF50; /* Green */
-	border: none;
-	color: white;
-	padding: 20px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	cursor: pointer;
-}
-
-#headfoot {
+.headfoot {
 	height: 20px;
 	margin-left: 0px;
 	color: #483d8b;
 }
 
-#headfoot hr {
+.headfoot hr {
 	margin-top: 0px;
 	margin-bottom: 0px;
-}
-
-#notebox {
-	background: #483d8b80;
-	padding:10px;
-	width:fit-content;
-}
-
-
-
-.main {
-	margin-left: 130px;
-	background-color: white;
-	padding: 0px 0px 0px 0px;
-}
-
-.home {
-	background: #FFEBCD;
-	font-family:cursive;
-	padding: 25px;
-	width: 250px;
-	height: 120px;
-	display: inline-block;
-	margin: 10px;
-}
-
-.homeblock p {
-	font-family: "Lucida Console", "Courier New", monospace;
-	margin-top: 30px;
-}
-
-.bodycontent {
-	margin-left: 50px;
-	margin-top: 80px;
-	margin-bottom: 20px;
 }
 
 textarea {
@@ -145,7 +162,7 @@ textarea {
 }
 
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 </head>
 <body>
 	<div class="sidenav"> 
@@ -159,13 +176,13 @@ textarea {
 		{% endif %}
 	</div>
 
-	<div id="content", name="content",  class="main">
-			<div class="container" id="headfoot">
+	<div class="main">
+			<div class="headfoot">
 				<img src="https://i.imgur.com/pslrbp9.jpg">
 				<hr class="solid">	
 			</div>
 
-			<div class="bodycontent">
+			<div class="body">
 				{% if user.is_authenticated %}
 					<p>Welcome, {{ request.user }}</p>
 				{% endif %}
@@ -183,15 +200,15 @@ textarea {
 				{% endif %}
 			</div>
 
-			<div class="footer" id="headfoot">
+			<div class="headfoot">
 					<hr class="solid">
 					<h2>SimpleNoteZ</h2>
 			</div>
 	</div>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
 
 </body>
 </html>
