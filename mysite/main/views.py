@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 def home(response):
 	return render(response, 'main/home.html', {})
 
-def create(request):
+def create(request, name="create"):
 	if request.method == "POST":
 		form=MakeNewNote(request.POST)
 		if form.is_valid():

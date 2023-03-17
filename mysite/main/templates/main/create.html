@@ -4,7 +4,7 @@
 <form method="post" id="id-input-box" action="/create/">
 	<h3>Add your note here</h3>
 	{% csrf_token %}
-	{{form.as_p|linebreaksbr}}
+	{{form.as_p}}
 	<button type="submit">Submit Note<button>
 	
 </form>	

@@ -17,14 +17,22 @@
 						</li>
 				
 				{% endfor %} 
+						<button class="indnote-button" onclick="location.href = '/create'">&#43;</button>
+						
+
+
 			</ul>
 		{% else %}
 			<p>You don't have any notes</p>
 			<td><a href="/create/">Create One!</a></td>
 
 		{% endif %}
-		<a href="/home/">  
-	    <input type="submit" value="Back"/></a>
+
+		
+
+
+
+		<button onclick="location.href = '/home'">Back</button>
 	</div>
 
 {% endblock content %}
