@@ -6,9 +6,7 @@
 	<title>SimpleNoteZ</title>
 <style>
 
-/*main color: #483d8b*/
-
-/*input[type=text], select {
+input[type=text], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -18,26 +16,23 @@
   box-sizing: border-box;
 }
 
-input[type=submit] {
+input[type=password], select {
   width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
+  padding: 12px 20px;
   margin: 8px 0;
-  border: none;
+  display: inline-block;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  cursor: pointer;
+  box-sizing: border-box;
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
-}
 
 .div-form {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-}*/
+  width: 40%;
+}
 
 .main {
 	margin-left: 130px;
@@ -54,7 +49,7 @@ input[type=submit]:hover {
 .sidenav {
 	height: 100%;
 	width: 130px;
-	background-color: #F5F5F5;
+	background-color: #f2f2f2;
 	position: fixed;
 	padding: 5px;
 	z-index: 1;
@@ -110,7 +105,6 @@ input[type=submit]:hover {
 .main-button {
 	background-color: #483d8b;
 	list-style-type: none;
-/*	display: inline-block;*/
 	margin-right: 10px;
 	margin-bottom: 10px;
 	width:100px;
@@ -132,11 +126,6 @@ input[type=submit]:hover {
 }
 
 .notesblock button:hover {opacity: 1}
-
-/*.indnote a {
-	color: #483d8b;
-	margin-left: 50px;
-}*/
 
 .indnote p {
 	width: 300px;
@@ -193,10 +182,17 @@ textarea {
 					{% block content %}
 					{% endblock content %}
 				{% else %}
-					<p>Login <a href="/login">Here</a></p>
-					<p>First time here? <a href="/register/">Register</a></p>
-					{% block login %}
-					{% endblock login %}
+					{% if request.path == '/login/' %}
+						{% block login %}
+						{% endblock login %}
+					{% elif request.path == '/register/' %}
+						{% block register %}
+						{% endblock register %}
+					{% else %}
+						<p>Login <a href="/login">Here</a></p>
+						<p>First time here? <a href="/register/">Register</a></p>
+					{% endif %}
+					
 				{% endif %}
 			</div>
 
