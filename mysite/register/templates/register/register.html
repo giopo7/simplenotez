@@ -3,10 +3,10 @@
 {% load crispy_forms_tags %}
 
 {% block register %}
-<form method="POST" class="form-group">
+<form method="POST" class="div-form">
 	{% csrf_token %}
 	{{ form|crispy }}
-	<button type="submit" class="btn btn-success">Register</button>
+	<button type="submit" class="main-button">Register</button>
 </form>
 
 {% endblock register %}
